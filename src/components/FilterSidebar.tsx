@@ -85,3 +85,5 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({ categories, onFilterChang
     </div>
   );
 };
+
+export default FilterSidebar

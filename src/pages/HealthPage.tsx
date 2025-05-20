@@ -108,3 +108,5 @@ const HealthPage: React.FC = () => {
     </div>
   );
 };
+
+export default HealthPage
