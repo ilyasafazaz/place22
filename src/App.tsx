@@ -3,24 +3,42 @@ import { Globe, Menu } from 'lucide-react';
 import Header from './components/Header';
 import MainContent from './components/MainContent';
 import Sidebar from './components/Sidebar';
+import PlacesSidebar from './components/PlacesSidebar';
 import { ExplorationMode } from './types';
 
 function App() {
   const [mode, setMode] = useState<ExplorationMode>('place');
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isPlacesSidebarOpen, setIsPlacesSidebarOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 flex flex-col">
-      <button
-        onClick={() => setIsSidebarOpen(true)}
-        className="fixed top-4 left-4 z-50 p-2 rounded-md bg-white shadow-md hover:bg-slate-50 transition-colors"
-      >
-        <Menu size={24} className="text-slate-700" />
-      </button>
+      <div className="fixed top-4 left-4 z-50">
+        <button
+          onClick={() => setIsSidebarOpen(true)}
+          className="p-2 rounded-md bg-white shadow-md hover:bg-slate-50 transition-colors"
+        >
+          <Menu size={24} className="text-slate-700" />
+        </button>
+      </div>
+
+      <div className="fixed top-4 right-4 z-50">
+        <button
+          onClick={() => setIsPlacesSidebarOpen(true)}
+          className="p-2 rounded-md bg-white shadow-md hover:bg-slate-50 transition-colors"
+        >
+          <Globe size={24} className="text-slate-700" />
+        </button>
+      </div>
       
       <Sidebar 
         isOpen={isSidebarOpen} 
         onClose={() => setIsSidebarOpen(false)} 
+      />
+
+      <PlacesSidebar
+        isOpen={isPlacesSidebarOpen}
+        onClose={() => setIsPlacesSidebarOpen(false)}
       />
       
       <Header 
