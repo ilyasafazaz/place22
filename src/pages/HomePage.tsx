@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { MapPin, Activity, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { ExplorationMode } from '../types';
 
 const slides = [
@@ -88,6 +89,44 @@ const HomePage: React.FC = () => {
           ))}
         </div>
       </div>
+
+      {/* Navigation Menu */}
+      <nav className="bg-white border-y border-slate-200 py-4">
+        <div className="container mx-auto px-4">
+          <ul className="flex justify-center space-x-8">
+            <li>
+              <Link to="/health" className="text-slate-600 hover:text-blue-600 transition-colors">
+                Health
+              </Link>
+            </li>
+            <li>
+              <Link to="/education" className="text-slate-600 hover:text-blue-600 transition-colors">
+                Education
+              </Link>
+            </li>
+            <li>
+              <Link to="/entertainment" className="text-slate-600 hover:text-blue-600 transition-colors">
+                Entertainment
+              </Link>
+            </li>
+            <li>
+              <Link to="/sports" className="text-slate-600 hover:text-blue-600 transition-colors">
+                Sports
+              </Link>
+            </li>
+            <li>
+              <Link to="/culture" className="text-slate-600 hover:text-blue-600 transition-colors">
+                Culture
+              </Link>
+            </li>
+            <li>
+              <Link to="/business" className="text-slate-600 hover:text-blue-600 transition-colors">
+                Business
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </nav>
 
       {/* Mode Selection */}
       <div className="container mx-auto px-4 py-6 flex justify-center space-x-4">
