@@ -64,7 +64,7 @@ const HealthPage: React.FC = () => {
   };
 
   return (
-    <div className="flex h-[calc(100vh-64px)]">
+    <div className="flex min-h-screen">
       <FilterSidebar 
         categories={[healthCategories]} 
         onFilterChange={handleFilterChange} 
@@ -109,4 +109,4 @@ const HealthPage: React.FC = () => {
   );
 };
 
-export default HealthPage
+export default HealthPage;
