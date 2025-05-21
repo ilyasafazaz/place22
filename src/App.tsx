@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { Globe, Menu } from 'lucide-react';
 import Sidebar from './components/Sidebar';
 import PlacesSidebar from './components/PlacesSidebar';
+import HomePage from './pages/HomePage';
 import HealthPage from './pages/HealthPage';
 import { ExplorationMode } from './types';
 
@@ -45,10 +46,10 @@ function App() {
         <nav className="bg-white border-b border-slate-200 py-4">
           <div className="container mx-auto px-4">
             <div className="flex items-center justify-between">
-              <div className="flex items-center">
+              <Link to="/" className="flex items-center">
                 <span className="text-2xl font-bold text-blue-600">Place</span>
                 <span className="text-2xl font-bold text-slate-800">2</span>
-              </div>
+              </Link>
               <ul className="flex justify-center space-x-8">
                 <li>
                   <Link to="/health" className="text-slate-600 hover:text-blue-600 transition-colors">
@@ -95,12 +96,7 @@ function App() {
 
         <main className="flex-1">
           <Routes>
-            <Route path="/" element={
-              <div className="p-8 text-center">
-                <h1 className="text-3xl font-bold text-slate-800">Welcome to Place2</h1>
-                <p className="mt-4 text-slate-600">Discover amazing places and activities around you</p>
-              </div>
-            } />
+            <Route path="/" element={<HomePage />} />
             <Route path="/health" element={<HealthPage />} />
             {/* Add other routes as needed */}
           </Routes>
